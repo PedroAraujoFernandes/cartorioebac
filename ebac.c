@@ -117,9 +117,9 @@ int deletar()
 	FILE *file;
 	file =fopen(cpf, "r");
 	
-	if(cpf == NULL)
+	if(file == NULL)
 	{
-			printf("não foi possivel achar este cpf ");
+			printf("não foi possivel encontrar este cpf.\n");
 			system("pause");
 	}
 	
@@ -143,7 +143,8 @@ int main()
 	printf("\t1 - registrar nomes\n");
 	printf("\t2 - consultar nomes\n");
 	printf("\t3 - deletar nomes\n");
-	printf("opção:");
+    printf("\t4 - sair do sistema\n");
+    printf("opção:");
 	
 	scanf("%d", &opcao);
 	
@@ -169,7 +170,11 @@ int main()
 		default:
 		printf("esta opção é invalida !\n");
 		system("pause");
+		break;
 		
+		case 4:
+		printf("obrigado por ultilizar o sistema !");
+		return 0;
 		break;
 	}
 }
